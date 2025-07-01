@@ -124,3 +124,15 @@ img{
     text-align:center;
     box-shadow: 2px 2px 3px #999;  
 }
+
+.contactimg1{
+    margin-top: 30px;
+    margin-top: 15px;
+}
+
+.vertical-line {
+    position: absolute;
+    left: 50%;
+    height: 50%;
+    border-left: 3px solid;
+}
