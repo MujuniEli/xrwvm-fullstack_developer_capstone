@@ -57,7 +57,8 @@ const PostReview = () => {
   });
 
   const json = await res.json();
-  if (json.status === 200) {
+  console.log("Response JSON from add_review:", json);
+  if (res.status === 200) {
       window.location.href = window.location.origin+"/dealer/"+id;
   }
 
@@ -67,12 +68,17 @@ const PostReview = () => {
       method: "GET"
     });
     const retobj = await res.json();
+
+    if (retobj.status === 200) {
+        setDealer(retobj.dealer); 
+      }
     
-    if(retobj.status === 200) {
-      let dealerobjs = Array.from(retobj.dealer)
-      if(dealerobjs.length > 0)
-        setDealer(dealerobjs[0])
-    }
+    // if(retobj.status === 200) {
+    //   let dealerobjs = Array.from(retobj.dealer)
+      
+    //   if(dealerobjs.length > 0)
+    //     setDealer(dealerobjs[0])
+    // }
   }
 
   const get_cars = async ()=>{
